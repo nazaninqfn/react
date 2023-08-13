@@ -1,28 +1,17 @@
-//use the const keyword to define a variable
-//objects in JavaScript are collections of key value pairs
-const person = {
-    name :'mosh';
-   //key:value->string
-    walk :function(){
-    //key:value->function=method
-    //function in a object->method
-    //walk is a method in the person object
+//this
+//this always returns a reference to the current object.
 
-    //another method in es6 way
-    talk (){}
+//If we call a function as a method in an object, this will always return a reference to that object.
+
+const person = {
+    name:"mosh",
+    walk(){
+        console.log(this);
     }
 };
-
-//two ways to access these members
-//.
-//If you know ahead of time what property or method we're going to access
-
-person.talk();
-person.name = '';
-//[]
-//when we don't know ahead of time what property or method we're going to access
-
-person['name'] = 'john';
 //example
-const targetMember = 'name';
-person[targetMember.value] = 'John';
+person.walk();
+const walk = person.walk;
+
+//if we call a function as a stand alone object, or outside of an object, this will return the global object which is the window object in browsers
+walk();
