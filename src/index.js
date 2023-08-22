@@ -1,9 +1,26 @@
-const jobs=[
-    {id:1, isActive:true},
-    {id:2, isActive:true},
-    {id:3, isActive:false},
+//  arrow functions don't rebind this
+// const person ={
+//     talk(){
+//set time out will execute this function after this delay.
+//         setTimeout(function(){
+//             console.log("this",this);
+//         },1000);
 
-];
+        
+//     }
+// };
+// person.talk();
 
-//const activeJobs = jobs.filter(function(job) {return job.isActive;});
-const activeJobs = jobs.filter(job=> job.isActive);
+//arrow functions////////////////////////////////////
+const person ={
+    talk(){
+        //set time out will execute this function after this delay.
+        setTimeout(() =>{
+            console.log("this",this);
+        },1000);
+
+        
+    }
+};
+person.talk();
+//Arrow functions don't rebind the this keyword.
