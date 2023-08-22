@@ -1,5 +1,12 @@
-const first ={name: 'John',};
-const second ={job : 'doctor'};
+class Person {
+    constructor(name){
+        this.name = name;
+    }
 
-const combined ={...first,...second,location:"usa"};
-console.log(combined);
+    walk(){
+        console.log("walk");
+    }
+}
+
+const Person = new Person('John');
+person.
