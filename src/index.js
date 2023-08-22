@@ -1,26 +1,13 @@
-//  arrow functions don't rebind this
-// const person ={
-//     talk(){
-//set time out will execute this function after this delay.
-//         setTimeout(function(){
-//             console.log("this",this);
-//         },1000);
+//to render a list of items use the map method of arrays
 
-        
-//     }
-// };
-// person.talk();
+// const colors =['red', 'green', 'blue'];
+// const items = colors.map( color =>'<li>'+color +'</li>');
 
-//arrow functions////////////////////////////////////
-const person ={
-    talk(){
-        //set time out will execute this function after this delay.
-        setTimeout(() =>{
-            console.log("this",this);
-        },1000);
-
-        
-    }
-};
-person.talk();
-//Arrow functions don't rebind the this keyword.
+//So this is what we want to call a template literal
+const colors =['red', 'green', 'blue'];
+const items = colors.map( color =>`<li>${color}</li>`);
+                                    //what we put in 
+                                    //between the braces
+                                    // will be rendered dynamically
+                                    // at run time.
+console.log(items);
