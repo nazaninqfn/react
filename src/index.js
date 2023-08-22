@@ -1,12 +1,8 @@
+import Teacher,{promote} from "./teacher";
+//import React, {component} from "react";
 
-// So instead of writing all the code in one file, we write our code 
-// in multiple files, we call each file a module.
-
-//when working with modules, the objects we define in a module 
-//are private by default
-
-import { Teacher } from "./teacher";
-
+//defult -> import ...from '';
+//named -> import { ... } from '';
 
 const teacher = new Teacher('john','msc');
 
