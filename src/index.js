@@ -1,17 +1,7 @@
-const address = {
-    street :'',
-    city:'',
-    country:'',
+const first =[1,2,3];
+const second =[4,5,6];
 
-};
-// const street = address.street;
-// const city = address.city;
-// const country = address.country;
-
-//restructure ->
-const {street, city, country} = address;
-
-//const {street:st} = address;
-//we want to call this constant st
-//we are setting that to the street property of the address object
-
+const combined = first.concat(second);
+const combined = [...first,'a',...second,'b'];
+//we'll get every item in this array and put it in our new array
+//you can simply come here and add an element right in the middle'a' and end'b'.
