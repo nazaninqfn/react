@@ -1,7 +1,4 @@
-//this
-//this always returns a reference to the current object.
 
-//If we call a function as a method in an object, this will always return a reference to that object.
 
 const person = {
     name:"mosh",
@@ -9,9 +6,13 @@ const person = {
         console.log(this);
     }
 };
-//example
-person.walk();
-const walk = person.walk;
 
-//if we call a function as a stand alone object, or outside of an object, this will return the global object which is the window object in browsers
+person.walk();
+const walk = person.walk.bind(person);
+//in JavaScript, functions are objects,person.walk, 
+//the person is actually an object
+
+//we can use bind method to bind a function to an object
+//With the bind method we can set the value of 'this' permanently
+
 walk();
