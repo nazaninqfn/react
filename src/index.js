@@ -1,33 +1,13 @@
-class Person {
-    constructor(name){
-        this.name = name;
-    }
 
-    walk(){
-        console.log("walk");
-    }
-}
+// So instead of writing all the code in one file, we write our code 
+// in multiple files, we call each file a module.
 
-//teacher class inherit from the person class
-//, and this means it will inherit all the
-//methods defined in this person class
+//when working with modules, the objects we define in a module 
+//are private by default
 
-//extend make inherite
+import { Teacher } from "./teacher";
 
-//whenever we add the constructor in a child
-//class we need to call the constructor of it's parent class.
-class Teacher extends Person {
-    constructor(name,degree){
-
-//whenever we add the constructor in a child
-//class we need to call the constructor of it's parent class.
-        super(name);
-        this.degree = degree;
-    }
-    teach(){
-        console.log("teach");
-    }
-}
 
 const teacher = new Teacher('john','msc');
 
+teacher.teach();
