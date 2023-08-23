@@ -6,7 +6,16 @@ class Counter extends Component {
         count:0,
     };
 
+    // constructor(){
+    //     super();
+    //     this.handleIncrement = this.handleIncrement.bind(this);
+    //     //So because we added a constructor in this child class.
+    //     // First we have to call the constructor of the parent class,
+    //     // using the super keyword
+    // }
 
+    
+    //arrow functions don't rebind with this keyword, they inherit it
     handleIncrement () {
         console.log('Increment Clicked', this);
     }

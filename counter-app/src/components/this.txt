@@ -1,0 +1,19 @@
+If a function is called as part of a method in an object
+
+, this in that function would always return a reference with an object.
+
+However if that function is called as a stand alone function,
+without an object reference,
+//obj.method();
+//function();
+
+this by default returns a reference to the window object,
+
+but if the strict mode is enabled
+
+this will return undefined.
+And that's the reason in this event handler we don'thave access to this.
+
+So what is the solution?
+Again in the last section I talked about the bind method.
+We use that method to solve this problem.
