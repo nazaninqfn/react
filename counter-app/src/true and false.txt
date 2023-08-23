@@ -1,0 +1,14 @@
+When a JavaScript engine tries
+
+to value this expression, it looks like the first operand
+
+
+if The second operand is not a boolean true or false,
+
+. An empty string is considered falsey.
+
+A string that has at least one character is
+
+truthy.
+
+Any numbers but 0 is considered truthy.
