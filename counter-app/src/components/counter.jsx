@@ -11,7 +11,13 @@ class Counter extends Component {
         // to React.createElement. That's why
         // we have to import the React object on the top even though
         // we are not going to directly use this in our code
-        return <h1>Hello World</h1>;
+        return (
+        <React.Fragment>
+            <h1>Hello World</h1>
+            <button>Increment</button>
+        </React.Fragment>
+        //ctl+d -> multiply cursor
+        );
     }
 }
 
