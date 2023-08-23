@@ -10,7 +10,6 @@ class Counter extends Component {
     
     render() { 
 
-        let classes = this.getBadgeClasses();
         
         return (
         <React.Fragment>
