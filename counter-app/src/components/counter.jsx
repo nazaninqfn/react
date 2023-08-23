@@ -12,11 +12,6 @@ class Counter extends Component {
         this.setState({count:this.state.count+1});
     }
     
-    doHandelIncrement = () => {
-        this.handleIncrement({ id:1 });
-    };
-
-
     render() { 
 
         return (
@@ -25,7 +20,11 @@ class Counter extends Component {
             <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
             <button
             
-            onClick={this.doHandelIncrement} 
+            //whenever you need to pass an argument, your event handlers simply
+            //pass an arrow function here, in the body of that function called
+            //the event handler, and pass an argument.
+
+            onClick={() => this.handleIncrement({ product })} 
             className='btn btn-secondary btn-sm'>Increment</button>
 
         </React.Fragment>
