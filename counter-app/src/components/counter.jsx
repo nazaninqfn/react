@@ -1,28 +1,23 @@
 import React, { Component } from 'react'
-//cc
+
 class Counter extends Component {
     state = {
-        count:0,
+        value:this.props.value,
     };
     
     
-    handleIncrement = (product) => {
-        console.log(product);
-        this.setState({count:this.state.count+1});
-    }
+    handleIncrement = () => {
+        this.setState({value:this.state.value+1});
+    };
 
     render() { 
 
         return (
         <React.Fragment>
+
             <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
             <button           
-            onClick={this.doHandelIncrement} 
-            //whenever you need to pass an argument, your event handlers simply
-            //pass an arrow function here, in the body of that function called
-            //the event handler, and pass an argument.
-
-            onClick={() => this.handleIncrement({ product })} 
+            onClick={this.handelIncrement} 
             className='btn btn-secondary btn-sm'>Increment</button>
 
         </React.Fragment>
@@ -30,11 +25,11 @@ class Counter extends Component {
     }
     getBadgeClasses() {
         let classes = "badge m-2 badge-";
-        classes += this.state.count === 0 ? "warning" : "primary";
+        classes += this.state.value === 0 ? "warning" : "primary";
         return classes;
     }
     formatCount(){
-        const{count} = this.state;
+        const{value: count} = this.state;
         return count === 0 ? 'zero': count;
     }
 }
