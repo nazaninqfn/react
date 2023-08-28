@@ -1,0 +1,4 @@
+a React application is essentially
+a tree of components, so we can compose components together
+to build complex user interfaces.
+
