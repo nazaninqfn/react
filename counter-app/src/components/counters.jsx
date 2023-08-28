@@ -24,17 +24,6 @@ class Counters extends Component {
                 <Counter key={counter.id} value={counter.value} />
             ))}
 
-            {/* a special prop called children, and we use that
-            when we want to pass something between the opening and closing
-            tag of an element */}
-
-            {/* example */}
-
-                {/* <Counter key={counter.id} value={counter.value}>
-                    <h4>title</h4>
-                <counter/>
-                */}
-
         </div>);
     }
 }

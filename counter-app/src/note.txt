@@ -2,3 +2,10 @@ a React application is essentially
 a tree of components, so we can compose components together
 to build complex user interfaces.
 
+Props includes
+data that we give to a component, whereas state includes
+data that is local or private to that component
+So,other components cannot access that state. It's completely internal
+to that component. In other words, if you go to the counters
+
+props is read only.
