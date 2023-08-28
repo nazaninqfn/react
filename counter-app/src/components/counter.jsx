@@ -3,18 +3,11 @@ import React, { Component } from 'react'
 class Counter extends Component {
     state = {
         value:this.props.value,
-        //we're using props
-        //to initialize the state
-
-        // Props includes
-        // data that we give to a component, whereas state includes
-        // data that is local or private to that component
     };
     
     
     handleIncrement = () => {
-        this.props.value = 0;
-        // props is read only.
+        
         this.setState({value:this.state.value+1});
     };
 
@@ -23,14 +16,29 @@ class Counter extends Component {
         
 
         return (
-        <React.Fragment>
+        <div>
 
             <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
             <button           
-            onClick={this.handleIncrement} 
-            className='btn btn-secondary btn-sm'>Increment</button>
+                onClick={this.handleIncrement} 
+                className='btn btn-secondary btn-sm'>
+                    Increment
+            </button>
+            <button onClick={this.handleDelete} className="btn btn-danger btn-sm m-2">
+                delete
+            </button>
+            {/* 
+            how can we modify this state from
+            counter component?, because this is where we have placed
+            our delete button. To solve this button, we should modify
+            our counter component to raise an event. We're going to call that event
+            onDelete. 
+            So, our components can raise events
+            and this is the naming convention that we use to name those events.
+            */}
 
-        </React.Fragment>
+
+        </div>
         );
     }
     getBadgeClasses() {

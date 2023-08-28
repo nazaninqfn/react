@@ -10,9 +10,14 @@ class Counters extends Component {
                 {id:2, value:0 },
                 {id:3, value:0 },
                 {id:4, value:0 },
-                
+            // The component that
+            // owns a piece of the state should be the one modifying it
             ]
         } ;
+
+        handleDelete =() => {
+            console.log('event handler called')
+        };
 
     render() { 
 
@@ -21,7 +26,7 @@ class Counters extends Component {
         <div>
 
             {this.state.counters.map(counter => (
-                <Counter key={counter.id} value={counter.value} />
+                <Counter key={counter.id} onDelete={this.handleDelete} value={counter.value} />
             ))}
 
         </div>);
