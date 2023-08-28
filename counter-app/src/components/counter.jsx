@@ -24,19 +24,13 @@ class Counter extends Component {
                 className='btn btn-secondary btn-sm'>
                     Increment
             </button>
-            <button onClick={this.handleDelete} className="btn btn-danger btn-sm m-2">
+            <button onClick={this.props.onDelete} className="btn btn-danger btn-sm m-2">
                 delete
             </button>
             {/* 
-            how can we modify this state from
-            counter component?, because this is where we have placed
-            our delete button. To solve this button, we should modify
-            our counter component to raise an event. We're going to call that event
-            onDelete. 
-            So, our components can raise events
-            and this is the naming convention that we use to name those events.
+            our counter component is raising an event,
+            and it's parent, that is counters component is handling that event. 
             */}
-
 
         </div>
         );
