@@ -17,11 +17,17 @@ class App extends Component {
 
   // the constructor is called once and it's the right place to
   // initialize the properties in this class
-  constructor(props) {
-    super(props);
-    console.log("constructor", this.props);
-    // this.state =this.props.something
+  constructor() {
+    super();
+    console.log("constructor");
+    
   }
+
+  //componentdidMount
+  componentDidMount() {
+    //ajax call
+    console.log("componentDidMount");
+  };
 
   handleIncrement = (counter) => {
     const counters = [...this.state.counters];
@@ -44,6 +50,7 @@ class App extends Component {
     this.setState({ counters });
   };
   render() {
+    console.log("render");
     return (
       <React.Fragment>
         <NavBar
