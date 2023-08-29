@@ -7,7 +7,7 @@ class Counters extends Component {
     render() {
         console.log('counters');
 
-        const {onReset, counters, onDelete, onIncrement} = this.props;
+        const {onReset, counters, onDelete, onIncrement,onDecrement} = this.props;
 
 
         return (
@@ -25,6 +25,9 @@ class Counters extends Component {
                         key={counter.id}
                         onDelete={onDelete}
                         onIncrement={onIncrement}
+                        /////////V
+                        onDecrement={onDecrement}
+                        /////A
                         counter={counter}
                     />
                 ))}
