@@ -14,3 +14,11 @@ Controlled component, doesn't have it's own state,
 it receives all the data via props and raises
 events whenever data needs to be changed. So this component
 is entirely controlled by it's parent
+
+when there is no parent child relationship between
+two components, and you want to keep them in sync, you want to share
+data between them, you need to lift the state up. So in this case
+we want to lift the state of the counters component to it's parent
+that is our app component. Now both the counters
+and navbar components have the same parent, this is where
+we have the state, so we pass it to all the children using props.
