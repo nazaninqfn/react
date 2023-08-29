@@ -25,9 +25,7 @@ class Counters extends Component {
                         key={counter.id}
                         onDelete={onDelete}
                         onIncrement={onIncrement}
-                        /////////V
                         onDecrement={onDecrement}
-                        /////A
                         counter={counter}
                     />
                 ))}

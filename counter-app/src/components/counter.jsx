@@ -21,12 +21,11 @@ class Counter extends Component {
 
         this.setState({ value: this.state.value + 1 });
     };
-    ///////////////////////////V
     handleDecrement = () => {
 
         this.setState({ value: this.state.value - 1 });
     };
-    ////////////////////////////////A
+
     render() {
         console.log('counter');
 
