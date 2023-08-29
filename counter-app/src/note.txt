@@ -9,3 +9,8 @@ So,other components cannot access that state. It's completely internal
 to that component. In other words, if you go to the counters
 
 props is read only.
+
+Controlled component, doesn't have it's own state,
+it receives all the data via props and raises
+events whenever data needs to be changed. So this component
+is entirely controlled by it's parent
