@@ -13,6 +13,16 @@ class App extends Component {
     ],
   };
 
+  //mounting phase
+
+  // the constructor is called once and it's the right place to
+  // initialize the properties in this class
+  constructor(props) {
+    super(props);
+    console.log("constructor", this.props);
+    // this.state =this.props.something
+  }
+
   handleIncrement = (counter) => {
     const counters = [...this.state.counters];
     const index = counters.indexOf(counter);
