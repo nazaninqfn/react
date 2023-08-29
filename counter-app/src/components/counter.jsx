@@ -11,6 +11,7 @@ class Counter extends Component {
     };
 
     render() { 
+        console.log('counter');
         
         return (
         <div>
