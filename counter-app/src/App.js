@@ -50,7 +50,7 @@ class App extends Component {
     this.setState({ counters });
   };
   render() {
-    console.log("render");
+    console.log("app render");
     return (
       <React.Fragment>
         <NavBar

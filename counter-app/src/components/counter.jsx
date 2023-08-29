@@ -1,10 +1,23 @@
 import React, { Component } from 'react'
 
 class Counter extends Component {
-// remove the local state, and only rely on the props
-// and receive the data that this component needs.
-// since we no longer have the local state it doesn't make sense
-// to have handle increment
+
+// this method is called after a component is updated. Which means we
+// have new state or new props, so we can compare this new state
+// with the old state or the new props with the old props
+// and if there's a change we can make an AJAX request to get
+// new data from the server. If there are no changes perhaps we don't
+// want to make an additional AJAX request, this is an optional
+// technique
+    componentDidUpdate(prevProps, prevState) {
+        console.log('prevProps',prevProps);
+        console.log('prevState',prevState);
+        if (prevProps.Counter.value !== this.props.counter.value){
+            //ajax call and get new data from the server
+        }
+
+    };
+
     handleIncrement = () => {
         
         this.setState({value:this.state.value + 1});
