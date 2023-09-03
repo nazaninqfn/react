@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 // import { FontAwesome, FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import {faHeart} from '@fortawesome/free-solid-svg-icons';
 

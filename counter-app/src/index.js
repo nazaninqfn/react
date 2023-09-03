@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import "bootstrap/dist/css/bootstrap.css";
 
 
-import Vidly from './components/movies';
+// import Vidly from './components/movies';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
