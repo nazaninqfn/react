@@ -6,6 +6,7 @@ class Movies extends Component {
     state = {
         movies: getMovies(),
         pageSize:4,
+        currentPage:1,
     };
 
     handleDelete = (movie) => {
@@ -21,12 +22,13 @@ class Movies extends Component {
     };
 
     handlePageChange= page =>{
-        console.log('page');
+        this.setState({ currentPage: page });
     }
 
 
     render() {
         const { length: count } = this.state.movies;
+        const { pageSize , currentPage } = this.state;
 
         if (count === 0) return <p>no movie in database.</p>
 
@@ -69,9 +71,9 @@ class Movies extends Component {
                     </tbody>
                 </table>
                 <Pagination
-                    imtesCount={count}
-                    //count=this.state.movies.length
-                    pageSize={10}
+                    itemsCount={count}
+                    pageSize={pageSize}
+                    currentPage={currentPage}
                     onPageChange={this.handlePageChange}
                 />
             </React.Fragment>
