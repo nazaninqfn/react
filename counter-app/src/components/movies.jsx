@@ -3,6 +3,8 @@ import { getMovies } from '../services/fakeMovieService';
 import Like from './common/like';
 import Pagination from './common/pagination';
 import { paginate } from '../utils/paginate';
+import PropTypes from 'prop-types';
+
 
 class Movies extends Component {
     state = {
@@ -75,7 +77,7 @@ class Movies extends Component {
                     </tbody>
                 </table>
                 <Pagination
-                    itemsCount={count}
+                    itemsCount="asd"
                     pageSize={pageSize}
                     currentPage={currentPage}
                     onPageChange={this.handlePageChange}
@@ -84,5 +86,10 @@ class Movies extends Component {
         );
     }
 }
-
+Pagination.propTypes = {
+    itemsCount: PropTypes.number.isRequired,
+    pageSize: PropTypes.number.isRequired,
+    currentPage: PropTypes.number.isRequired,
+    onPageChange: PropTypes.func.isRequired,
+};
 export default Movies;
