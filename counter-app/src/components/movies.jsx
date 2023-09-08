@@ -5,7 +5,6 @@ import ListGroup from './common/listGroup';
 import Like from './common/like';
 import Pagination from './common/pagination';
 import { paginate } from '../utils/paginate';
-import PropTypes from 'prop-types';
 
 
 class Movies extends Component {
@@ -16,8 +15,8 @@ class Movies extends Component {
         currentPage: 1,
     };
 
-    commponentDidMount() {
-        this.setState({ movies: getMovies(), geners: getGenres() });
+    componentDidMount() {
+        this.setState({ movies: getMovies(), genres: getGenres() });
     };
 
     handleDelete = (movie) => {
@@ -36,7 +35,7 @@ class Movies extends Component {
         this.setState({ currentPage: page });
     }
 
-    handleGenreSelect = gener => {
+    handleGenreSelect = genre => {
         console.log(genre);
     };
 
@@ -51,7 +50,7 @@ class Movies extends Component {
 
         return (
             <div className='row'>
-                <div className="col-2">
+                <div className="col-3">
                     <ListGroup
                         items={this.state.genres}
                         onItemSelect={this.handleGenreSelect}
@@ -94,6 +93,7 @@ class Movies extends Component {
 
                         </tbody>
                     </table>
+
                     <Pagination
                         itemsCount={count}
                         pageSize={pageSize}
@@ -105,10 +105,5 @@ class Movies extends Component {
         );
     }
 }
-Pagination.propTypes = {
-    itemsCount: PropTypes.number.isRequired,
-    pageSize: PropTypes.number.isRequired,
-    currentPage: PropTypes.number.isRequired,
-    onPageChange: PropTypes.func.isRequired,
-};
+
 export default Movies;
