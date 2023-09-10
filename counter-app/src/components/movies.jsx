@@ -36,7 +36,7 @@ class Movies extends Component {
     }
 
     handleGenreSelect = genre => {
-        console.log(genre);
+        this.setState({ selectedGenres: genre });
     };
 
 
