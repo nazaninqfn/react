@@ -16,7 +16,9 @@ class Movies extends Component {
     };
 
     componentDidMount() {
-        this.setState({ movies: getMovies(), genres: getGenres() });
+        const genres = [{ name: 'All Genres'}, ...getGenres()]
+        this.setState({ movies: getMovies(), genres});
+        
     };
 
     handleDelete = (movie) => {
@@ -55,6 +57,11 @@ class Movies extends Component {
         const filtered = selectedGenre 
             ? allMovies.filter(m => m.genre._id === selectedGenre._id)
             : allMovies;
+        
+        //we're filtering the list of movies, we're checking to 
+        //see if selected genre is truth. If it's truthy, we're filtering 
+        //the movies, so we get each movie and we make sure that the id 
+        //of the genre of that movie equals the id of the selected genre
 
 
         const movies = paginate(filtered, currentPage, pageSize)
