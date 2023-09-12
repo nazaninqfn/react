@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { getMovies } from '../services/fakeMovieService';
 import { getGenres } from '../services/fakeGenreService';
 import ListGroup from './common/listGroup';
-import Like from './common/like';
 import Pagination from './common/pagination';
 import { paginate } from '../utils/paginate';
+import MoviesTable from './moviesTable';
 
 
 class Movies extends Component {
@@ -58,16 +58,7 @@ class Movies extends Component {
             ? allMovies.filter(m => m.genre._id === selectedGenre._id)
             : allMovies;
         
-        //we're filtering the list of movies, we're checking to 
-        //see if selected genre is truth. If it's truthy, we're filtering 
-        //the movies, so we get each movie and we make sure that the id 
-        //of the genre of that movie equals the id of the selected genre
-
-        // in this case, our selected genre doesn't have an id, because we
-        // only set the name property, that's why we don't see any movies,
-        // when we select all genres, to fix this problem, we
-        // need to change this condition to something like this.
-        // selectedGenre._id.
+        
 
 
         const movies = paginate(filtered, currentPage, pageSize)
@@ -84,42 +75,11 @@ class Movies extends Component {
                 </div>
                 <div className="col">
                     <p>showing {filtered.length} movies in database.</p>
-                    <table className="table">
-                        <thead>
-                            <tr>
-                                <th>title</th>
-                                <th>gener</th>
-                                <th>stock</th>
-                                <th>rate</th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {movies.map(movie => (
-                                <tr key={movie._id}>
-                                    <td>{movie.title}</td>
-                                    <td>{movie.genre.name}</td>
-                                    <td>{movie.numberInStock}</td>
-                                    <td>{movie.dailyRentalRate}</td>
-                                    <td>
-                                        <Like
-                                            onClick={() => this.handleLike(movie)}
-                                            liked={movie.liked}
-                                        />
-                                    </td>
-                                    <td>
-                                        <button
-                                            onClick={() => this.handleDelete(movie)}
-                                            className="btn btn-danger btm-sm">delete
-                                        </button>
-                                    </td>
-                                </tr>
-                            ))}
-
-                        </tbody>
-                    </table>
-
+                    <MoviesTable 
+                    movies={movies} 
+                    onLike={this.handleLike} 
+                    onDelete={this.handleDelete}
+                    />
                     <Pagination
                         itemsCount={filtered.length}
                         pageSize={pageSize}
