@@ -10,32 +10,33 @@ class MoviesTable extends Component {
         {path: 'numberInStock',label:'Stock'},
         {path: 'dailyRentalRate',label:'Rate'},
         {
-            key: 'like',
-            content : movie => 
-            <Like
+            key: "like",
+            content : movie => (
+                <Like
             onClick={() => this.props.onLike(movie)}
             liked={movie.liked}
             />
+            )
+            
         },
         {
-            key:'delete',
-            content : movie =>
-            <button
+            key:"delete",
+            content : movie =>(
+                <button
                 onClick={() => this.props.onDelete(movie)}
-                className="btn btn-danger btm-sm">delete
-            </button>
-        
-        },
+                className="btn btn-danger btm-sm"
+                >
+                    delete
+                </button>
+            )
+        }
         
     ];
 
     
     
     render() {
-        const { movies,onDelete,onLike,sortColumn,onSort } = this.props;
-
-
-
+        const { movies,sortColumn,onSort } = this.props;
 
         return (
             <table className="table">

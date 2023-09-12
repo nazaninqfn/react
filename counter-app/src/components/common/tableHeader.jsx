@@ -1,13 +1,5 @@
 import React, { Component } from 'react';
 
-
-
-
-
-
-
-
-
 class TableHeader extends Component {
 
     raiseSort = path => {

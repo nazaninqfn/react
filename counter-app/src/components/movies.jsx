@@ -24,14 +24,16 @@ class Movies extends Component {
     };
 
     handleDelete = (movie) => {
+        const movies = this.state.movies.filter(m => m._id !== movie._id);
+        this.setState({ movies});
+    };
+
+    handleLike = (movie) => {
         const movies = [...this.state.movies];
         const index = movies.indexOf(movie);
         movies[index] = { ...movies[index] };
         movies[index].liked = !movies[index].liked;
         this.setState({ movies });
-    };
-
-    handleLike = (movie) => {
         console.log('like');
     };
 
