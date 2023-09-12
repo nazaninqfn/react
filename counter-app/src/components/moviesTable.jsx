@@ -9,15 +9,30 @@ class MoviesTable extends Component {
         {path: 'genre.name',label:'genre'},
         {path: 'numberInStock',label:'Stock'},
         {path: 'dailyRentalRate',label:'Rate'},
-        {key: 'like'},
-        {key:'delete'},
+        {
+            key: 'like',
+            content : movie => 
+            <Like
+            onClick={() => this.props.onLike(movie)}
+            liked={movie.liked}
+            />
+        },
+        {
+            key:'delete',
+            content : movie =>
+            <button
+                onClick={() => this.props.onDelete(movie)}
+                className="btn btn-danger btm-sm">delete
+            </button>
+        
+        },
         
     ];
 
     
     
     render() {
-        const { movies,onDelete,onLike,sortColumns,onSort } = this.props;
+        const { movies,onDelete,onLike,sortColumn,onSort } = this.props;
 
 
 
@@ -26,33 +41,14 @@ class MoviesTable extends Component {
             <table className="table">
                 <TableHeader 
                     columns={this.columns}
-                    sortColumns={sortColumns} 
+                    sortColumn={sortColumn} 
                     onSort={onSort} 
                 />
-                <TableBody data={movies}/>
-                <tbody>
-                    {movies.map(movie => (
-                        <tr key={movie._id}>
-                            <td>{movie.title}</td>
-                            <td>{movie.genre.name}</td>
-                            <td>{movie.numberInStock}</td>
-                            <td>{movie.dailyRentalRate}</td>
-                            <td>
-                                <Like
-                                    onClick={() => onLike(movie)}
-                                    liked={movie.liked}
-                                />
-                            </td>
-                            <td>
-                                <button
-                                    onClick={() => onDelete(movie)}
-                                    className="btn btn-danger btm-sm">delete
-                                </button>
-                            </td>
-                        </tr>
-                    ))}
-
-                </tbody>
+                <TableBody 
+                    columns={this.columns} 
+                    data={movies}
+                />
+                
             </table>
 
         );
