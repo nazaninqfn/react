@@ -54,7 +54,7 @@ class Movies extends Component {
         if (count === 0) return <p>no movie in database.</p>
 
 
-        const filtered = selectedGenre 
+        const filtered = selectedGenre && selectedGenre._id
             ? allMovies.filter(m => m.genre._id === selectedGenre._id)
             : allMovies;
         
@@ -62,6 +62,12 @@ class Movies extends Component {
         //see if selected genre is truth. If it's truthy, we're filtering 
         //the movies, so we get each movie and we make sure that the id 
         //of the genre of that movie equals the id of the selected genre
+
+        // in this case, our selected genre doesn't have an id, because we
+        // only set the name property, that's why we don't see any movies,
+        // when we select all genres, to fix this problem, we
+        // need to change this condition to something like this.
+        // selectedGenre._id.
 
 
         const movies = paginate(filtered, currentPage, pageSize)
