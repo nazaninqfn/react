@@ -16,8 +16,9 @@ class App extends Component {
         <NavBar />
         <div className="content">
         <Routes>
-          
-          <Route path="/products" Component={Products} />
+          {/* route pass 3 additional props to its component */}
+          {/* passing props to cmp in route */}
+          <Route path="/products" render={() => <Products sortBy="newest"/>} />
           <Route path="/posts" Component={Posts} />
           <Route path="/admin" Component={Dashboard} />
           <Route path="/"  Component={Home} />
