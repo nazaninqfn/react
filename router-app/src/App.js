@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Route ,Routes,Switch } from "react-router-dom";
 import NavBar from "./components/navbar";
 import Products from "./components/products";
 import Posts from "./components/posts";
@@ -13,6 +14,17 @@ class App extends Component {
     return (
       <div>
         <NavBar />
+        <div className="content">
+        <Routes>
+          
+          <Route path="/products" Component={Products} />
+          <Route path="/posts" Component={Posts} />
+          <Route path="/admin" Component={Dashboard} />
+          <Route path="/"  Component={Home} />
+        </Routes>
+          
+          
+        </div>
       </div>
     );
   }
