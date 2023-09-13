@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route ,Routes,Switch } from "react-router-dom";
+import { Route, Routes, Switch } from "react-router-dom";
 import NavBar from "./components/navbar";
 import Products from "./components/products";
 import Posts from "./components/posts";
@@ -15,16 +15,18 @@ class App extends Component {
       <div>
         <NavBar />
         <div className="content">
-        <Routes>
-          {/* route pass 3 additional props to its component */}
-          {/* passing props to cmp in route */}
-          <Route path="/products" render={(props) => <Products sortBy="newest" {...props}/>} />
-          <Route path="/posts" Component={Posts} />
-          <Route path="/admin" Component={Dashboard} />
-          <Route path="/"  Component={Home} />
-        </Routes>
-          
-          
+          <Routes>
+
+            <Route path="/products/:id" element={ <ProductDetails/> } />
+
+            <Route
+              path="/products"
+              render={props => <Products sortBy="newest" { ...props } />}
+            />
+            <Route path="/posts/:year?/:month?" element={ <Posts/> } />
+            <Route path="/admin" element={ <Dashboard/> } />
+            <Route path="/" element={ <Home/> } />
+          </Routes>
         </div>
       </div>
     );
